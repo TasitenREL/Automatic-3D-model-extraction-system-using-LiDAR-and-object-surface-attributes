@@ -392,9 +392,9 @@ def run(
     #------------------------前準備------------------------------------
     bcount = 0#Blenderでスクリプトを実行させた回数
     detectionFlg = False#検知したかどうか
-    bfpath = '/home/omi/blenderpy/write.txt'#BlenderとYOLOをつなぐテキストパス
-    bfpath_pre = '/home/omi/blenderpy/write_pre.txt'#BlenderとYOLOをつなぐテキストパス、一番最初にだけ読み込まれる、Blenderで処理するオブジェクトの名前を記入するためにある。
-    bfpath_all = '/home/omi/blenderpy/allLog.txt'#すべてのログを記録する
+    bfpath = '/blenderpy/write.txt'#BlenderとYOLOをつなぐテキストパス
+    bfpath_pre = '/blenderpy/write_pre.txt'#BlenderとYOLOをつなぐテキストパス、一番最初にだけ読み込まれる、Blenderで処理するオブジェクトの名前を記入するためにある。
+    bfpath_all = '/blenderpy/allLog.txt'#すべてのログを記録する
     text_write(bfpath, "Blenderの準備:True\n")#テキスト上書き
     text_write(bfpath_pre, window_list["target_name"])#テキスト上書き
     text_add(bfpath, str(bcount) + "\n")#テキスト追記
