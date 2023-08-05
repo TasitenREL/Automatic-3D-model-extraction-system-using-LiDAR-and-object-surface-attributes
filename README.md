@@ -10,7 +10,7 @@ iPhoneのLiDARで取得した3Dデータを対象に，BlenderとYOLOを用い�
 このシステムはAppleが提供している「[VisualizingAndInteractingWithAReconstructedScene](https://developer.apple.com/jp/documentation/arkit/world_tracking/visualizing_and_interacting_with_a_reconstructed_scene/)」をベースにして開発を行いました．主なコードは「3DScan-Classify-ExportOBJ/VisualizingSceneSemantics
 /ViewController.swift」です．私が開発した部分は主にタップしたポリゴンの3頂点に仮想の赤い球体を配置する機能とobjファイルの出力を行う機能です．仮想球体を配置機能は分類するポリゴンをより可視化しやすくするために作成しました．objファイル出力機能はスキャンしたものを確認したり他端末で処理するために作成しました．
 
-![エラー](images/split.png)
+![エラー](imge/split.png)
 
 ## 期間
 1ヶ月
