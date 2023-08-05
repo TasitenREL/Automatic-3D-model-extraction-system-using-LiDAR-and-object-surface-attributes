@@ -134,9 +134,9 @@ def text_read_line(fpath):#テキスト一行ずつ読み込み
         print(text_list)
     return text_list
 
-fpath = '/home/omi/blenderpy/write.txt' #pyautogui_yolo.pyと連携するためのテキストファイル
-fpath_pre = '/home/omi/blenderpy/write_pre.txt'#BlenderとYOLOをつなぐテキストパス、一番最初にだけ読み込まれる、Blenderで処理するオブジェクトの名前を記入するためにある。
-fpath_all = '/home/omi/blenderpy/allLog.txt'#すべてのログを記録する
+fpath = '/blenderpy/write.txt' #pyautogui_yolo.pyと連携するためのテキストファイル
+fpath_pre = '/blenderpy/write_pre.txt'#BlenderとYOLOをつなぐテキストパス、一番最初にだけ読み込まれる、Blenderで処理するオブジェクトの名前を記入するためにある。
+fpath_all = '/blenderpy/allLog.txt'#すべてのログを記録する
 object_name = text_read_line(fpath_pre)[0] #切り抜き対象オブジェクトの名前
 
 if text_read_line(fpath)[1] == "0\n":#一番最初だけ実行
