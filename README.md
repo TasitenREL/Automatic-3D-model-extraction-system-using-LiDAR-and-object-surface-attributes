@@ -7,26 +7,26 @@ iPhoneのLiDARで取得した3Dデータを対象に，BlenderとYOLOを用い�
 このシステムはiPadに搭載されているLiDARとカメラを用いて現実の空間やオブジェクト(物体)を3Dスキャンし，その3DスキャンデータをBlenderとYOLOを用いて物体ごとに3Dデータを自動的に抽出するシステムです．基本的に3Dスキャンした3Dデータはすべてのオブジェクトが一体化していますが，抽出するオブジェクトを選択するとそのオブジェクト以外のポリゴンを削除していき，選択したオブジェクトだけが残ります．
 ![エラー](imge/split.png)
 
-またスキャン時に現実世界の(Ceiling，Door，Floor，Seat，Table，Wall，Window，Noneの8種類の)オブジェクトを分類することができ，iPad上でそのオブジェクトのポリゴンをタップすると分類結果テキストが仮想オブジェクトとして表示されます．objファイルは全ての点群を含んだものと(最大8種類の)分類ごとの点群を含んだものが出力される(出力例は「3DScan-Classify-ExportOBJ/ObjFile」にあります)．
+システムの流れとしてLiDARでスキャンした3DデータをBlenderに表示させ，その画面をキャプチャし仮想カメラに書き込み配信を行います．配信されている画像をPythonのYOLOを用いて物体検出を行いバウンディングボックス座標を取得します．Blender上でバウンディングボックス外にあるオブジェクトの頂点を選択し削除します．Blender上でオブジェクトを少し回転させ，再びその画面を使って物体検出を行う．オブジェクトが一回転したら終了です．．
 
-このシステムはAppleが提供している「[VisualizingAndInteractingWithAReconstructedScene](https://developer.apple.com/jp/documentation/arkit/world_tracking/visualizing_and_interacting_with_a_reconstructed_scene/)」をベースにして開発を行いました．主なコードは「3DScan-Classify-ExportOBJ/VisualizingSceneSemantics
-/ViewController.swift」です．私が開発した部分は主にタップしたポリゴンの3頂点に仮想の赤い球体を配置する機能とobjファイルの出力を行う機能です．仮想球体を配置機能は分類するポリゴンをより可視化しやすくするために作成しました．objファイル出力機能はスキャンしたものを確認したり他端末で処理するために作成しました．
+![エラー](imge/abstract.png)
 
-
+このシステムは物体検出を行う「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/pyautogui_yolo.py」とBlender上のオブジェクト操作を行う「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/object_split.py」の二つコードで動作しています．
 
 ## 期間
-1ヶ月
+2ヶ月
 
-## 言語と使用フレームワーク
-言語：Swift
-フレームワーク：ARKit，RealityKit
+## 言語
+言語：Python
 
 ## 開発環境
-個人開発でiPad Proで開発を行いました．
+個人開発でLinux環境で開発を行いました．
 
 ## 制作背景
-大学院の研究の一環として作成しました．3Dデータを用いた研究を行っており，3D物体検出・セグメンテーション・物体認識．分類やドローン・車の自動運転などをやっています．iPad ProはカメラやLiDARが搭載されており，またARKitなどのARフレームワークあることから手軽に3Dデータの取得・処理が行えると考えこのシステムを開発しました．MacやSwiftはほとんど触れたことがないため自由にアプリを作るまでに少し時間がかかってしまいましたが，今ではアプリ上の基本的なボタンの作成やARKitの扱い方などを理解し，ARアプリを作成できるようになりました．
+大学の卒業研究として作成しました．3Dスキャンに興味を持ち，3Dスキャンが手軽に行えるiPhone13Proを購入して様々なものをスキャンしていました．そんな時に3Dスキャンデータをもっと扱いやすくする方法は無いかと考え，このシステムを開発しようとしました．
+Pythonは最も慣れてい言語でしたが，Linux環境での開発やLinuxの仮想カメラなど初めて扱うものもあり，使いこなすまで時間がかかりました．しかし今ではLinuxが一番好きになりました．
 
 ## 動作風景URL
-動作している様子を撮影しました．アプリを開始してしばらくするとスキャン結果のメッシュが生成され，タップすると仮想球体や分類結果の仮想テキストが表示されます．この動画では実行していませんが，「ObjFile Export」ボタンを押すとobjファイルが出力されます．
-URL:[https://youtube.com/shorts/ZHBsXgpZ7_w](https://youtube.com/shorts/ZHBsXgpZ7_w)
+動作している様子を撮影しました．システムを起動するとBlender上の3DスキャンデータからYOLOを用いて物体検出を行います(今回は人のみを検出します)．物体検出の結果からPythonで自動制御マウスを用いたBlender上の抽出対象ではない3Dオブジェクト(人以外のオブジェクト)を削除します．その後，3Dデータを少しだけ回転させて，再び物体検出及び余分な3Dオブジェクトの削除を行います．これを3Dデータが一回転したら終了です．
+編集有URL:[https://youtu.be/u3_v-uW22-Q](https://youtu.be/u3_v-uW22-Q)
+編集無URL:[https://youtu.be/9OahinX9l5k](https://youtu.be/9OahinX9l5k)
