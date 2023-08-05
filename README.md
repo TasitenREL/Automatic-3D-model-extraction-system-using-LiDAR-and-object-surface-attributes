@@ -28,5 +28,7 @@ Pythonは最も慣れてい言語でしたが，Linux環境での開発やLinux�
 
 ## 動作風景URL
 動作している様子を撮影しました．システムを起動するとBlender上の3DスキャンデータからYOLOを用いて物体検出を行います(今回は人のみを検出します)．物体検出の結果からPythonで自動制御マウスを用いたBlender上の抽出対象ではない3Dオブジェクト(人以外のオブジェクト)を削除します．その後，3Dデータを少しだけ回転させて，再び物体検出及び余分な3Dオブジェクトの削除を行います．これを3Dデータが一回転したら終了です．
+
 編集有URL:[https://youtu.be/u3_v-uW22-Q](https://youtu.be/u3_v-uW22-Q)
+
 編集無URL:[https://youtu.be/9OahinX9l5k](https://youtu.be/9OahinX9l5k)
