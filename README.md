@@ -12,7 +12,7 @@ iPhoneのLiDARで取得した3Dデータを対象に，BlenderとYOLOを用い�
 
 ![エラー](imge/abstract.png)
 
-このシステムは物体検出を行う「Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/pyautogui_yolo.py」とBlender上のオブジェクト操作を行う「[Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/object_split.py](https://github.com/TasitenREL/Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/blob/main/object_split.py)」の二つコードで動作しています．
+このシステムは物体検出を行う「[Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/pyautogui_yolo.py](https://github.com/TasitenREL/Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/blob/main/pyautogui_yolo.py)」とBlender上のオブジェクト操作を行う「[Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/object_split.py](https://github.com/TasitenREL/Automatic-3D-model-extraction-system-using-LiDAR-and-object-surface-attributes/blob/main/object_split.py)」の二つコードで動作しています．
 
 ## 期間
 2ヶ月
